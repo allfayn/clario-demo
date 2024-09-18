@@ -1,3 +1,14 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    //    "eslint:recommended",
+    //    "plugin:import/errors",
+    //    "plugin:import/warnings",
+    //    "plugin:import/typescript",
+    //    "plugin:react/recommended",
+    //    "plugin:@typescript-eslint/recommended",
+    //    "plugin:@next/next/recommended",
+    "prettier"
+  ]
 }

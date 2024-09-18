@@ -6,21 +6,39 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint && npm run lint:css",
+    "lint:css": "stylelint --config ./stylelint.config.js '**/*.scss'",
+    "lint:css:fix": "stylelint --config ./stylelint.config.js --fix '**/*.scss'",
+    "lint:fix": "npm run lint:ts:fix && npm run lint:css:fix",
+    "lint:ts": "eslint --ext .ts,.tsx,.js,.jsx .",
+    "lint:ts:fix": "eslint --fix --ext .ts,.tsx,.js,.jsx ."
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "formik": "^2.4.6",
+    "next": "14.2.12",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.12"
+    "yup": "^1.4.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.12"
+    "eslint-config-next": "14.2.12",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-jest": "^28.8.3",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.36.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "postcss": "^8",
+    "prettier": "^3.3.3",
+    "stylelint": "^16.9.0",
+    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-scss": "^6.6.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
