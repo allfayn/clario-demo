@@ -7,7 +7,7 @@ import clsx from 'clsx';
 import { ValidationError } from 'yup';
 import { useRouter } from 'next/navigation';
 
-const SignUpComponent = () => {
+export const SignUpComponent = () => {
   const router = useRouter();
 
   type ValidationMessages = {
@@ -64,7 +64,7 @@ const SignUpComponent = () => {
         router.push('/dashboard');
       }}
     >
-      {({ errors, touched }) => {
+      {({ errors, touched, isSubmitting }) => {
         return (
           <Form className="flex flex-col gap-4">
             <div>
@@ -120,6 +120,7 @@ const SignUpComponent = () => {
               ))}
             </ul>
             <button
+              disabled={isSubmitting}
               type="submit"
               className="w-60 m-auto py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-3xl shadow"
             >
@@ -131,5 +132,3 @@ const SignUpComponent = () => {
     </Formik>
   );
 };
-
-export default SignUpComponent;
